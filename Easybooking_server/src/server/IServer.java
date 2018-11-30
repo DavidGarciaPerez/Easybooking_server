@@ -4,9 +4,9 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-import clases.Pago;
-import clases.Reserva;
-import clases.Vuelo;
+import data.Pago;
+import data.Reserva;
+import data.Vuelo;
 
 public interface IServer extends Remote {
 	boolean registerUser(String nombre, String email, String sistemaAutentificacion) throws RemoteException;

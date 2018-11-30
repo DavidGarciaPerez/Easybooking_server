@@ -77,7 +77,7 @@
 	    </target>
 		
 		<target name="4.main" description="Runs a local test of the Server">
-	        <java classname="server.Server" classpathref="classpath" fork="true">
+	        <java classname="bd_gestion.gestion_bd_main" classpathref="classpath" fork="true">
 	        	<jvmarg value="-Dlog4j.configuration=log4j.properties"/>
 			</java>
 	    </target>

@@ -6,13 +6,14 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
-import clases.Pago;
-import clases.Reserva;
-import clases.Vuelo;
+import data.Pago;
+import data.Reserva;
+import data.Vuelo;
 
 public class Server extends UnicastRemoteObject implements IServer {
 
 	private static final long serialVersionUID = 1L;// Serializable
+	
 
 	// Constructor por defecto:
 	protected Server() throws RemoteException {
