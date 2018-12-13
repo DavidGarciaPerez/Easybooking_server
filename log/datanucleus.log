@@ -951,3 +951,13 @@ org.datanucleus.exceptions.NucleusUserException: Clase "clases.Reserva" campo "v
 14:13:26,682 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Usuario.class" con definicion enhanced
 14:13:26,682 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
 14:13:26,682 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 16 clases.
+14:57:00,368 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.0.m1) para el API "JDO" utilisando el JRE "{2}"
+14:57:00,635 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aerolinea.class" con definicion enhanced
+14:57:00,640 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aeropuerto.class" con definicion enhanced
+14:57:00,644 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Creditcard.class" con definicion enhanced
+14:57:00,648 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Pago.class" con definicion enhanced
+14:57:00,651 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Paypal.class" con definicion enhanced
+14:57:00,655 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Reserva.class" con definicion enhanced
+14:57:00,658 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Usuario.class" con definicion enhanced
+14:57:00,663 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
+14:57:00,664 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases.
