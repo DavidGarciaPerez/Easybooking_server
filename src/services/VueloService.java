@@ -16,6 +16,9 @@ import data.Usuario;
 import data.Vuelo;
 import data.dto.ReservaDTO;
 import data.dto.VueloDTO;
+import gateways.GatewayFactory;
+import gateways.RyanairGateway;
+import gateways.VuelingGateway;
 import server.Server;
 
 //Esta clase implementa la Fachada y AppService Patterns:
@@ -38,26 +41,18 @@ public class VueloService extends UnicastRemoteObject implements IVueloService {
 		vuelos = assembler.assemble(server.buscarVuelos(origen, destino, nPlazas));
 		return vuelos;
 	}
-	
+
 	@Override
-	public boolean realizarReserva(VueloDTO vuelo, int nPlazas, String[] pasajeros)
-			throws RemoteException {
+	public boolean realizarReserva(VueloDTO vuelo, int nPlazas, String[] pasajeros) throws RemoteException {
 		// TODO Auto-generated method stub
 		// Transformación de DTO a DATA:
 		Aeropuerto aeropuertoOrigen = new Aeropuerto(vuelo.getAeropuertoOrigen().getNombre(),
-				                                     vuelo.getAeropuertoOrigen().getUbicacion());
+				vuelo.getAeropuertoOrigen().getUbicacion());
 		Aeropuerto aeropuestoDestino = new Aeropuerto(vuelo.getAeropuertoDestino().getNombre(),
-													  vuelo.getAeropuertoDestino().getUbicacion());
+				vuelo.getAeropuertoDestino().getUbicacion());
 		Aerolinea aerolinea = new Aerolinea(vuelo.getAerolinea().getNombreAerolinea());
-		Vuelo vueloDATA = new Vuelo(vuelo.getNumVuelo(),
-									vuelo.getHoraSalida(),
-									vuelo.getHoraLlegada(),
-									vuelo.getNumAsientos(),
-									vuelo.getAsientosLibres(),
-									aeropuertoOrigen, 
-									aeropuestoDestino, 
-									aerolinea);
-		
+		Vuelo vueloDATA = new Vuelo(vuelo.getNumVuelo(), vuelo.getHoraSalida(), vuelo.getHoraLlegada(),
+				vuelo.getNumAsientos(), vuelo.getAsientosLibres(), aeropuertoOrigen, aeropuestoDestino, aerolinea);
 
 		// Una vez transformado podemos pasar ya los datos:
 		this.server.realizarReserva(vueloDATA, nPlazas, pasajeros);
@@ -65,32 +60,43 @@ public class VueloService extends UnicastRemoteObject implements IVueloService {
 		return false;
 	}
 
-//	@Override
-//	public boolean realizarReserva(ReservaDTO reservaARealizar, int nPlazas, String[] pasajeros)
-//			throws RemoteException {
-//		// TODO Auto-generated method stub
-//		// Transformación de DTO a DATA:
-//		Usuario usuario = new Usuario(reservaARealizar.getUsuario().getNombre(),
-//				reservaARealizar.getUsuario().getEmail(), reservaARealizar.getUsuario().getSistemaAutentificacion());
-//		Aeropuerto aeropuertoOrigen = new Aeropuerto(reservaARealizar.getVuelo().getAeropuertoOrigen().getNombre(),
-//				reservaARealizar.getVuelo().getAeropuertoOrigen().getUbicacion());
-//		Aeropuerto aeropuestoDestino = new Aeropuerto(reservaARealizar.getVuelo().getAeropuertoDestino().getNombre(),
-//				reservaARealizar.getVuelo().getAeropuertoDestino().getUbicacion());
-//		Aerolinea aerolinea = new Aerolinea(reservaARealizar.getVuelo().getAerolinea().getNombreAerolinea());
-//		Vuelo vuelo = new Vuelo(reservaARealizar.getVuelo().getNumVuelo(), reservaARealizar.getVuelo().getHoraSalida(),
-//				reservaARealizar.getVuelo().getHoraLlegada(), reservaARealizar.getVuelo().getNumAsientos(),
-//				reservaARealizar.getVuelo().getAsientosLibres(), aeropuertoOrigen, aeropuestoDestino, aerolinea);
-//		Paypal paypal = new Paypal(reservaARealizar.getPago().getPaypal().getNombreUsuario());
-//		Creditcard creditcard = new Creditcard(reservaARealizar.getPago().getCreditcard().getNumeroTarjeta(),
-//				reservaARealizar.getPago().getCreditcard().getCvv2(),
-//				reservaARealizar.getPago().getCreditcard().getFechaCaducidad());
-//		Pago pago = new Pago(paypal, creditcard);
-//		Reserva reserva = new Reserva(reservaARealizar.getPrecio(), reservaARealizar.getAsiento(), usuario, vuelo,
-//				pago);
-//
-//		// Una vez transformado podemos pasar ya los datos:
-//		this.server.realizarReserva(reserva, nPlazas, pasajeros);
-//
-//		return false;
-//	}
+	// @Override
+	// public boolean realizarReserva(ReservaDTO reservaARealizar, int nPlazas,
+	// String[] pasajeros)
+	// throws RemoteException {
+	// // TODO Auto-generated method stub
+	// // Transformación de DTO a DATA:
+	// Usuario usuario = new Usuario(reservaARealizar.getUsuario().getNombre(),
+	// reservaARealizar.getUsuario().getEmail(),
+	// reservaARealizar.getUsuario().getSistemaAutentificacion());
+	// Aeropuerto aeropuertoOrigen = new
+	// Aeropuerto(reservaARealizar.getVuelo().getAeropuertoOrigen().getNombre(),
+	// reservaARealizar.getVuelo().getAeropuertoOrigen().getUbicacion());
+	// Aeropuerto aeropuestoDestino = new
+	// Aeropuerto(reservaARealizar.getVuelo().getAeropuertoDestino().getNombre(),
+	// reservaARealizar.getVuelo().getAeropuertoDestino().getUbicacion());
+	// Aerolinea aerolinea = new
+	// Aerolinea(reservaARealizar.getVuelo().getAerolinea().getNombreAerolinea());
+	// Vuelo vuelo = new Vuelo(reservaARealizar.getVuelo().getNumVuelo(),
+	// reservaARealizar.getVuelo().getHoraSalida(),
+	// reservaARealizar.getVuelo().getHoraLlegada(),
+	// reservaARealizar.getVuelo().getNumAsientos(),
+	// reservaARealizar.getVuelo().getAsientosLibres(), aeropuertoOrigen,
+	// aeropuestoDestino, aerolinea);
+	// Paypal paypal = new
+	// Paypal(reservaARealizar.getPago().getPaypal().getNombreUsuario());
+	// Creditcard creditcard = new
+	// Creditcard(reservaARealizar.getPago().getCreditcard().getNumeroTarjeta(),
+	// reservaARealizar.getPago().getCreditcard().getCvv2(),
+	// reservaARealizar.getPago().getCreditcard().getFechaCaducidad());
+	// Pago pago = new Pago(paypal, creditcard);
+	// Reserva reserva = new Reserva(reservaARealizar.getPrecio(),
+	// reservaARealizar.getAsiento(), usuario, vuelo,
+	// pago);
+	//
+	// // Una vez transformado podemos pasar ya los datos:
+	// this.server.realizarReserva(reserva, nPlazas, pasajeros);
+	//
+	// return false;
+	// }
 }

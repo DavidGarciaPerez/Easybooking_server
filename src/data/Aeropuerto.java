@@ -5,12 +5,11 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Aeropuerto {
-	
+
 	@PrimaryKey
 	private int idAeropuerto;
 	private String nombre;
 	private String ubicacion;
-	
 
 	public Aeropuerto(String nombre, String ubicacion) {
 		super();
@@ -40,6 +39,11 @@ public class Aeropuerto {
 
 	public void setUbicacion(String ubicacion) {
 		this.ubicacion = ubicacion;
+	}
+
+	@Override
+	public String toString() {
+		return "Aeropuerto [idAeropuerto=" + idAeropuerto + ", nombre=" + nombre + ", ubicacion=" + ubicacion + "]";
 	}
 
 }

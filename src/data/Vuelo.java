@@ -7,7 +7,7 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Vuelo {
-	
+
 	@PrimaryKey
 	private int numVuelo;
 	private Date horaSalida;
@@ -70,7 +70,7 @@ public class Vuelo {
 	public void setAsientosLibres(int asientosLibres) {
 		this.asientosLibres = asientosLibres;
 	}
-	
+
 	public Aeropuerto getAeropuertoOrigen() {
 		return aeropuertoOrigen;
 	}
@@ -86,7 +86,6 @@ public class Vuelo {
 	public void setAeropuertoDestino(Aeropuerto aeropuertoDestino) {
 		this.aeropuertoDestino = aeropuertoDestino;
 	}
-	
 
 	public Aerolinea getAerolinea() {
 		return aerolinea;
@@ -95,4 +94,12 @@ public class Vuelo {
 	public void setAerolinea(Aerolinea aerolinea) {
 		this.aerolinea = aerolinea;
 	}
+
+	@Override
+	public String toString() {
+		return "Vuelo [numVuelo=" + numVuelo + ", horaSalida=" + horaSalida + ", horaLlegada=" + horaLlegada
+				+ ", numAsientos=" + numAsientos + ", asientosLibres=" + asientosLibres + ", aeropuertoOrigen="
+				+ aeropuertoOrigen + ", aeropuertoDestino=" + aeropuertoDestino + ", aerolinea=" + aerolinea + "]";
+	}
+
 }
