@@ -1,9 +1,14 @@
 package data.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class CreditcardDTO {
+public class CreditcardDTO implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String numeroTarjeta;
 	private int cvv2;
 	private Date fechaCaducidad;

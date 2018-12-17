@@ -1,7 +1,13 @@
 package data.dto;
 
-public class AerolineaDTO {
+import java.io.Serializable;
 
+public class AerolineaDTO implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nombreAerolinea;
 	
 	public AerolineaDTO(String nombreAerolinea) {

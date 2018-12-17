@@ -1,7 +1,13 @@
 package data.dto;
 
-public class PaypalDTO {
-	
+import java.io.Serializable;
+
+public class PaypalDTO implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String nombreUsuario;
 
 	public PaypalDTO(String nombreUsuario) {

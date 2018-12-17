@@ -1,9 +1,14 @@
 package data.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class VueloDTO {
+public class VueloDTO implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int numVuelo;
 	private Date horaSalida;
 	private Date horaLlegada;
@@ -25,7 +30,7 @@ public class VueloDTO {
 		this.aeropuertoDestino = aeropuertoDestino;
 		this.aerolinea = aerolinea;
 	}
-	
+
 	public int getNumVuelo() {
 		return numVuelo;
 	}
@@ -65,7 +70,7 @@ public class VueloDTO {
 	public void setAsientosLibres(int asientosLibres) {
 		this.asientosLibres = asientosLibres;
 	}
-	
+
 	public AeropuertoDTO getAeropuertoOrigen() {
 		return aeropuertoOrigen;
 	}
@@ -81,7 +86,6 @@ public class VueloDTO {
 	public void setAeropuertoDestino(AeropuertoDTO aeropuertoDestino) {
 		this.aeropuertoDestino = aeropuertoDestino;
 	}
-	
 
 	public AerolineaDTO getAerolinea() {
 		return aerolinea;
@@ -90,5 +94,5 @@ public class VueloDTO {
 	public void setAerolinea(AerolineaDTO aerolinea) {
 		this.aerolinea = aerolinea;
 	}
-	
+
 }

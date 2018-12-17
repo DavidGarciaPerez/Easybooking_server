@@ -1,7 +1,13 @@
 package data.dto;
 
-public class PagoDTO {
+import java.io.Serializable;
 
+public class PagoDTO implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private PaypalDTO paypal;
 	private CreditcardDTO creditcard;
 

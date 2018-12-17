@@ -6,7 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
 import server.Server;
 
 //Esta clase implementa la Fachada y AppService Patterns:
-public class LoginService extends UnicastRemoteObject implements ILoginService{
+public class LoginService extends UnicastRemoteObject implements ILoginService {
 
 	private static final long serialVersionUID = 1L;
 	private Server server;
@@ -19,16 +19,13 @@ public class LoginService extends UnicastRemoteObject implements ILoginService{
 	@Override
 	public boolean registerUser(String nombre, String email, String sistemaAutentificacion) throws RemoteException {
 		// TODO Auto-generated method stub
-		this.server.registerUser(nombre, email, sistemaAutentificacion);
-		return false;
+		return this.server.registerUser(nombre, email, sistemaAutentificacion);
 	}
 
 	@Override
 	public boolean login(String email, String sistemaAutentificacion) throws RemoteException {
 		// TODO Auto-generated method stub
-		this.server.login(email, sistemaAutentificacion);
-		return false;
+		return this.server.login(email, sistemaAutentificacion);
 	}
-	
-	
+
 }

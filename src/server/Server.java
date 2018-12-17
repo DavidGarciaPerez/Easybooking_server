@@ -108,8 +108,8 @@ public class Server {
 		// devolvemos en un único arrayList:
 		ArrayList<Vuelo> listaADevolver = new ArrayList<Vuelo>();
 		for (Vuelo vueloRyanair : vuelosRyanair) {
-			if (vueloRyanair.getAeropuertoOrigen().getNombre().equalsIgnoreCase(origen)
-					&& vueloRyanair.getAeropuertoDestino().getNombre().equalsIgnoreCase(destino)
+			if (vueloRyanair.getAeropuertoOrigen().getUbicacion().equalsIgnoreCase(origen)
+					&& vueloRyanair.getAeropuertoDestino().getUbicacion().equalsIgnoreCase(destino)
 					&& vueloRyanair.getAsientosLibres() >= nPlazas) {
 				// Entonces podemos guardar el vuelo como válido en la lista:
 				listaADevolver.add(vueloRyanair);
@@ -117,8 +117,8 @@ public class Server {
 		}
 		// Ahora lo mismo para los vuelos de Vueling:
 		for (Vuelo vueloVueling : vuelosVueling) {
-			if (vueloVueling.getAeropuertoOrigen().getNombre().equalsIgnoreCase(origen)
-					&& vueloVueling.getAeropuertoDestino().getNombre().equalsIgnoreCase(destino)
+			if (vueloVueling.getAeropuertoOrigen().getUbicacion().equalsIgnoreCase(origen)
+					&& vueloVueling.getAeropuertoDestino().getUbicacion().equalsIgnoreCase(destino)
 					&& vueloVueling.getAsientosLibres() >= nPlazas) {
 				// Entonces podemos guardar el vuelo como válido en la lista:
 				listaADevolver.add(vueloVueling);

@@ -1,7 +1,13 @@
 package data.dto;
 
-public class ReservaDTO {
+import java.io.Serializable;
 
+public class ReservaDTO implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private double precio;
 	private String asiento;
 	private UsuarioDTO usuario;

@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 public class GoogleGateway implements IConexionGateway {
 
 	private String ip = "0.0.0.0";
-	private int port = 35602;
+	private int port = 35601;
 
 	@Override
 	public boolean login(String email) {
@@ -25,12 +25,13 @@ public class GoogleGateway implements IConexionGateway {
 
 			// Send request (a Srting) to the server
 			out.writeUTF(email + "#" + "12345");
-			dev = true;
-
 			// Read response (a String) from the server
 			String data = in.readUTF();
 			System.out.println(" - TCPSocketClient: Received data from '" + tcpSocket.getInetAddress().getHostAddress()
 					+ ":" + tcpSocket.getPort() + "' -> '" + data + "'");
+			if (data.equalsIgnoreCase("OK#OK")) {
+				dev = true;
+			}
 		} catch (UnknownHostException e) {
 			System.err.println("# TCPSocketClient: Socket error: " + e.getMessage());
 		} catch (EOFException e) {

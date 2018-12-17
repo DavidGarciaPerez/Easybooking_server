@@ -26,18 +26,18 @@ public class ServerManager {
 
 		try {
 			Server server = new Server();
-			
-			ILoginService loginService = new LoginService(server);			
+
+			ILoginService loginService = new LoginService(server);
 			Naming.rebind(nameLogin, loginService);
 			System.out.println("* Login Service '" + nameLogin + "' active and waiting...");
-			
+
 			IVueloService vueloService = new VueloService(server);
 			Naming.rebind(nameVuelo, vueloService);
 			System.out.println("* Vuelo Service '" + nameVuelo + "' active and waiting...");
-			
+
 			IPagoService pagoService = new PagoService(server);
 			Naming.rebind(namePago, pagoService);
-			System.out.println("* Pago Service '" + nameVuelo + "' active and waiting...");
+			System.out.println("* Pago Service '" + namePago + "' active and waiting...");
 		} catch (Exception e) {
 			System.err.println("$ ServerManager exception: " + e.getMessage());
 			e.printStackTrace();
