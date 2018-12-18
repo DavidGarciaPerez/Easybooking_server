@@ -4,11 +4,13 @@ import java.util.List;
 
 import data.Reserva;
 import data.Usuario;
+import data.Vuelo;
 
 public interface IDAO {
-	public boolean registerUser(Usuario usuario);
-	public List<Usuario> getUsuarios(List<Usuario> arrayUsuarios);
-	public List<Reserva> getReservas(List<Reserva> arrayReservas, Usuario usario);
-	public boolean deleteUsuario(Usuario usuario);
-	public boolean changeUserName(Usuario usuario);
+	boolean registerUser(Usuario usuario);
+	List<Usuario> getUsuarios(List<Usuario> arrayUsuarios);
+	List<Reserva> getReservas(List<Reserva> arrayReservas, Usuario usario);
+	boolean deleteUsuario(Usuario usuario);
+	boolean changeUserName(Usuario usuario);
+	boolean realizarReserva(Vuelo vuelo);
 }

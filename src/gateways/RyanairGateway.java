@@ -36,6 +36,25 @@ public class RyanairGateway implements IAerolineaGateway {
 		this.VUELOS_RYANAIR = this.generarListVuelos();
 	}
 
+	public ArrayList<Vuelo> getVUELOS_RYANAIR() {
+		return this.VUELOS_RYANAIR;
+	}
+
+	public void setVUELOS_RYANAIR(ArrayList<Vuelo> vUELOS_RYANAIR) {
+		this.VUELOS_RYANAIR = vUELOS_RYANAIR;
+	}
+
+	public void decrementarPlazasLibres(Vuelo vuelo) {
+		// Buscamos el vuelo y decrementamos sus plazas:
+		for (int i = 0; i < this.VUELOS_RYANAIR.size(); i++) {
+			if (this.VUELOS_RYANAIR.get(i).getNumVuelo() == vuelo.getNumVuelo()) {
+				// Decrementamos plazas libres de este vuelo:
+				this.VUELOS_RYANAIR.get(i)
+						.setAsientosLibres(this.VUELOS_RYANAIR.get(i).getAsientosLibres() - vuelo.getAsientosLibres());
+			}
+		}
+	}
+
 	@Override
 	public ArrayList<Vuelo> buscarVuelo() {
 		// TODO Auto-generated method stub

@@ -10,9 +10,10 @@ import javax.jdo.Transaction;
 
 import data.Reserva;
 import data.Usuario;
+import data.Vuelo;
 
-public class DAOImplement implements IDAO{
-	
+public class DAOImplement implements IDAO {
+
 	// Declaración de variable datanucleusProperties:
 	private String datanucleusProperties = "datanucleus.properties"; // JDO
 	// Declaración de variable clase: PersistenceManager.
@@ -22,7 +23,7 @@ public class DAOImplement implements IDAO{
 	// Declaración de variable clase: PersistenceManagerFactory: //JDO
 	private PersistenceManagerFactory pmf;
 
-	//Constructor para inicializar el PersistentManagerFactory:
+	// Constructor para inicializar el PersistentManagerFactory:
 	public DAOImplement() {
 		this.pmf = JDOHelper.getPersistenceManagerFactory(datanucleusProperties);
 	}
@@ -101,6 +102,39 @@ public class DAOImplement implements IDAO{
 	public List<Reserva> getReservas(List<Reserva> arrayReservas, Usuario usario) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean realizarReserva(Vuelo vuelo) {
+		// TODO Auto-generated method stub
+		boolean consultaCorrecta = false;
+		try {
+			// Get the Persistence Manager
+			this.pm = this.pmf.getPersistenceManager();
+			// Obtain the current transaction
+			this.tx = this.pm.currentTransaction();
+			// Start the transaction
+			this.tx.begin();
+			// Realizamos consulta a la BD:
+			this.pm.makePersistent(vuelo);
+			// End the transaction
+			this.tx.commit();
+			// Confirmamos que la consulta se ha hecho correctamente.
+			consultaCorrecta = true;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+				// ATTENTION - Datanucleus detects that the objects in memory were changed and
+				// they are flushed to DB
+			}
+		}
+		return consultaCorrecta;
 	}
 
 	@Override

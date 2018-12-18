@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
+import dao.DAOImplement;
 import data.Creditcard;
 import data.Paypal;
 import data.Vuelo;
@@ -57,6 +58,7 @@ public class Server {
 	private VuelingGateway vuelingGateway;
 	private GoogleGateway googleGateway;
 	private FacebookGateway facebookGateway;
+	//private DAOImplement DAO;
 
 	Server() {
 		this.paypalGateway = (PaypalGateway) gatewayFactory.createPagoGateway("PAYPAL");
@@ -65,6 +67,7 @@ public class Server {
 		this.vuelingGateway = (VuelingGateway) gatewayFactory.createAerolineaGateway("VUELING");
 		this.googleGateway = (GoogleGateway) gatewayFactory.createConexionGateway("GOOGLE");
 		this.facebookGateway = (FacebookGateway) gatewayFactory.createConexionGateway("FACEBOOK");
+		//this.DAO = new DAOImplement();
 	}
 
 	public synchronized boolean login(String email, String sistemaAutentificacion) throws RemoteException {
@@ -129,7 +132,22 @@ public class Server {
 	}
 
 	public synchronized boolean realizarReserva(Vuelo vuelo, int nPlazas, String[] pasajeros) throws RemoteException {
-		return false;
+		boolean dev = false;
+
+		// Conectamos con el gateway de la aerolínea: para eso hay que buscarlo en
+		// "Vuelo":
+		if (vuelo.getAerolinea().getNombreAerolinea().equalsIgnoreCase("VUELING")) {
+			// Conectamos con VUELING:
+			this.vuelingGateway.decrementarPlazasLibres(vuelo);
+		} else {
+			// Conectamos con RYANAIR:
+			this.ryanairGateway.decrementarPlazasLibres(vuelo);
+		}
+
+		// Una vez decrementadas las plazas podemos guardar la reserva en la bd:
+		//this.DAO.realizarReserva(vuelo);
+
+		return dev;
 	}
 
 	public synchronized boolean realizarPagoPaypal(Paypal paypalOrigen, Paypal paypalDestino, double importe,

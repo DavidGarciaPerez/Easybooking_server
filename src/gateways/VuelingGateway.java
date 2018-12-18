@@ -36,6 +36,25 @@ public class VuelingGateway implements IAerolineaGateway {
 		this.VUELOS_VUELING = this.generarListVuelos();
 	}
 
+	public ArrayList<Vuelo> getVUELOS_VUELING() {
+		return this.VUELOS_VUELING;
+	}
+
+	public void setVUELOS_VUELING(ArrayList<Vuelo> vUELOS_VUELING) {
+		this.VUELOS_VUELING = vUELOS_VUELING;
+	}
+
+	public void decrementarPlazasLibres(Vuelo vuelo) {
+		// Buscamos el vuelo y decrementamos sus plazas:
+		for (int i = 0; i < this.VUELOS_VUELING.size(); i++) {
+			if (this.VUELOS_VUELING.get(i).getNumVuelo() == vuelo.getNumVuelo()) {
+				// Decrementamos plazas libres de este vuelo:
+				this.VUELOS_VUELING.get(i)
+						.setAsientosLibres(this.VUELOS_VUELING.get(i).getAsientosLibres() - vuelo.getAsientosLibres());
+			}
+		}
+	}
+
 	@Override
 	public ArrayList<Vuelo> buscarVuelo() {
 		// TODO Auto-generated method stub
