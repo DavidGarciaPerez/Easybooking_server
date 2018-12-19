@@ -2,6 +2,7 @@ package server;
 
 import java.rmi.Naming;
 
+import dao.DAOImplement;
 import services.ILoginService;
 import services.IPagoService;
 import services.IVueloService;
@@ -38,6 +39,8 @@ public class ServerManager {
 			IPagoService pagoService = new PagoService(server);
 			Naming.rebind(namePago, pagoService);
 			System.out.println("* Pago Service '" + namePago + "' active and waiting...");
+
+			DAOImplement.getInstance();
 		} catch (Exception e) {
 			System.err.println("$ ServerManager exception: " + e.getMessage());
 			e.printStackTrace();

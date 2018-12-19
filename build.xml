@@ -39,11 +39,11 @@
 		<jar destfile="${dist.dir}/${export.file}" basedir="${build.dir}" excludes="**/Server.class" />
 	</target>
 
-	<target name="server" depends="build" description="Runs the Server">
+	<target name="server" depends="2.enhance-classes" description="Runs the Server">
 		<java classname="server.ServerManager" classpathref="classpath" fork="true">
+			<jvmarg value="-Dlog4j.configuration=log4j.properties" />
 			<jvmarg value="-Djava.rmi.server.codebase=file:${build.dir}/" />
 			<jvmarg value="-Djava.security.policy=${policy.file}" />
-			<jvmarg value="-Dlog4j.configuration=log4j.properties" />
 			<arg value="${server.IP}" />
 			<arg value="${server.port}" />
 			<arg value="${server.Login}" />

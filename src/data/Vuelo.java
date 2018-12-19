@@ -3,12 +3,10 @@ package data;
 import java.util.Date;
 
 import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Vuelo {
-
-	@PrimaryKey
+	
 	private int numVuelo;
 	private Date horaSalida;
 	private Date horaLlegada;
@@ -94,12 +92,4 @@ public class Vuelo {
 	public void setAerolinea(Aerolinea aerolinea) {
 		this.aerolinea = aerolinea;
 	}
-
-	@Override
-	public String toString() {
-		return "Vuelo [numVuelo=" + numVuelo + ", horaSalida=" + horaSalida + ", horaLlegada=" + horaLlegada
-				+ ", numAsientos=" + numAsientos + ", asientosLibres=" + asientosLibres + ", aeropuertoOrigen="
-				+ aeropuertoOrigen + ", aeropuertoDestino=" + aeropuertoDestino + ", aerolinea=" + aerolinea + "]";
-	}
-
 }

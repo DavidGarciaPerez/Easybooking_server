@@ -6,8 +6,6 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Pago {
 	
-	@PrimaryKey
-	private int idPago;
 	private Paypal paypal;
 	private Creditcard creditcard;
 	
@@ -16,14 +14,6 @@ public class Pago {
 		super();
 		this.paypal = paypal;
 		this.creditcard = creditcard;
-	}
-
-	public int getIdPago() {
-		return idPago;
-	}
-
-	public void setIdPago(int idPago) {
-		this.idPago = idPago;
 	}
 
 	public Paypal getPaypal() {

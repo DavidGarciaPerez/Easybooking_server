@@ -55,9 +55,7 @@ public class VueloService extends UnicastRemoteObject implements IVueloService {
 				vuelo.getNumAsientos(), vuelo.getAsientosLibres(), aeropuertoOrigen, aeropuestoDestino, aerolinea);
 
 		// Una vez transformado podemos pasar ya los datos:
-		this.server.realizarReserva(vueloDATA, nPlazas, pasajeros);
-
-		return false;
+		return 	this.server.realizarReserva(vueloDATA, nPlazas, pasajeros);
 	}
 
 	// @Override

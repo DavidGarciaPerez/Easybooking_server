@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -9,7 +10,10 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import data.Aerolinea;
+import data.Aeropuerto;
 import data.Usuario;
+import data.Vuelo;
 
 public class gestion_bd_main {
 
@@ -145,6 +149,38 @@ public class gestion_bd_main {
 		return consultaCorrecta;
 	}
 
+	public boolean realizarReserva(Vuelo vuelo) {
+		// TODO Auto-generated method stub
+		boolean consultaCorrecta = false;
+		try {
+			// Get the Persistence Manager
+			this.pm = this.pmf.getPersistenceManager();
+			// Obtain the current transaction
+			this.tx = this.pm.currentTransaction();
+			// Start the transaction
+			this.tx.begin();
+			// Realizamos consulta a la BD:
+			this.pm.makePersistent(vuelo);
+			// End the transaction
+			this.tx.commit();
+			// Confirmamos que la consulta se ha hecho correctamente.
+			consultaCorrecta = true;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+				// ATTENTION - Datanucleus detects that the objects in memory were changed and
+				// they are flushed to DB
+			}
+		}
+		return consultaCorrecta;
+	}
+
 	private boolean changeUserName(Usuario usuario) {
 		boolean consultaCorrecta = false;
 		try {
@@ -202,6 +238,12 @@ public class gestion_bd_main {
 		if (gbd.changeUserName(newUser) != true) {
 			System.out.println("Error al modificar el nombre del usuario: " + arrayUsuarios.get(0).getNombre());
 		}
+
+		//Aeropuerto ao = new Aeropuerto("Bilbao Aeropuerto", "Bilbao");
+		//Aeropuerto ad = new Aeropuerto("Donosti Aeropuerto", "Donosti");
+		//Aerolinea aerolinea = new Aerolinea("VUELING");
+		//Vuelo vuelo = new Vuelo(1000, new Date(), new Date(), 100, 50, ao, ad, aerolinea);
+		//gbd.realizarReserva(vuelo);
 
 		// Borramos todos los usuarios de la bd:
 		arrayUsuarios = new ArrayList<Usuario>();

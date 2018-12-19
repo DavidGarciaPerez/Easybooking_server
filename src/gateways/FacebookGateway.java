@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 public class FacebookGateway implements IConexionGateway {
 
 	private String ip = "0.0.0.0";
-	private int port = 35601;
+	private int port = 35600;
 
 	@Override
 	public boolean login(String email) {

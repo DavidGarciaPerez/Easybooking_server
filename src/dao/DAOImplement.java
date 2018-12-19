@@ -23,6 +23,16 @@ public class DAOImplement implements IDAO {
 	// Declaración de variable clase: PersistenceManagerFactory: //JDO
 	private PersistenceManagerFactory pmf;
 
+	public static DAOImplement instance;
+
+	public static DAOImplement getInstance() {
+		if (instance == null) {
+			instance = new DAOImplement();
+		}
+
+		return instance;
+	}
+
 	// Constructor para inicializar el PersistentManagerFactory:
 	public DAOImplement() {
 		this.pmf = JDOHelper.getPersistenceManagerFactory(datanucleusProperties);

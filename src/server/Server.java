@@ -51,26 +51,23 @@ public class Server {
 	// }
 	// }
 
-	private GatewayFactory gatewayFactory = GatewayFactory.getInstance();
 	private PaypalGateway paypalGateway;
 	private VisaGateway visaGateway;
 	private RyanairGateway ryanairGateway;
 	private VuelingGateway vuelingGateway;
 	private GoogleGateway googleGateway;
 	private FacebookGateway facebookGateway;
-	//private DAOImplement DAO;
 
 	Server() {
-		this.paypalGateway = (PaypalGateway) gatewayFactory.createPagoGateway("PAYPAL");
-		this.visaGateway = (VisaGateway) gatewayFactory.createPagoGateway("VISA");
-		this.ryanairGateway = (RyanairGateway) gatewayFactory.createAerolineaGateway("RYANAIR");
-		this.vuelingGateway = (VuelingGateway) gatewayFactory.createAerolineaGateway("VUELING");
-		this.googleGateway = (GoogleGateway) gatewayFactory.createConexionGateway("GOOGLE");
-		this.facebookGateway = (FacebookGateway) gatewayFactory.createConexionGateway("FACEBOOK");
-		//this.DAO = new DAOImplement();
+		this.paypalGateway = (PaypalGateway) GatewayFactory.getInstance().createPagoGateway("PAYPAL");
+		this.visaGateway = (VisaGateway) GatewayFactory.getInstance().createPagoGateway("VISA");
+		this.ryanairGateway = (RyanairGateway) GatewayFactory.getInstance().createAerolineaGateway("RYANAIR");
+		this.vuelingGateway = (VuelingGateway) GatewayFactory.getInstance().createAerolineaGateway("VUELING");
+		this.googleGateway = (GoogleGateway) GatewayFactory.getInstance().createConexionGateway("GOOGLE");
+		this.facebookGateway = (FacebookGateway) GatewayFactory.getInstance().createConexionGateway("FACEBOOK");
 	}
 
-	public synchronized boolean login(String email, String sistemaAutentificacion) throws RemoteException {
+	public synchronized boolean login(String email, String sistemaAutentificacion) {
 		boolean dev = false;
 		// Dependiendo del sistema de autentificación hay que ir o por GOOGLE o por
 		// FACEBOOK:
@@ -91,8 +88,7 @@ public class Server {
 		return dev;
 	}
 
-	public synchronized boolean registerUser(String nombre, String email, String sistemaAutentificacion)
-			throws RemoteException {
+	public synchronized boolean registerUser(String nombre, String email, String sistemaAutentificacion) {
 		// Para registrar un nuevo usuario primero hay que comprobar si no existe ya en
 		// nuesra base de datos:
 
@@ -101,8 +97,7 @@ public class Server {
 		return false;
 	}
 
-	public synchronized ArrayList<Vuelo> buscarVuelos(String origen, String destino, int nPlazas)
-			throws RemoteException {
+	public synchronized ArrayList<Vuelo> buscarVuelos(String origen, String destino, int nPlazas) {
 		// Conectamos con los gateways de las aeroníneas para pedirles los vuelos:
 		List<Vuelo> vuelosRyanair = this.ryanairGateway.buscarVuelo();
 		List<Vuelo> vuelosVueling = this.vuelingGateway.buscarVuelo();
@@ -131,9 +126,7 @@ public class Server {
 		return listaADevolver;
 	}
 
-	public synchronized boolean realizarReserva(Vuelo vuelo, int nPlazas, String[] pasajeros) throws RemoteException {
-		boolean dev = false;
-
+	public synchronized boolean realizarReserva(Vuelo vuelo, int nPlazas, String[] pasajeros) {
 		// Conectamos con el gateway de la aerolínea: para eso hay que buscarlo en
 		// "Vuelo":
 		if (vuelo.getAerolinea().getNombreAerolinea().equalsIgnoreCase("VUELING")) {
@@ -145,13 +138,11 @@ public class Server {
 		}
 
 		// Una vez decrementadas las plazas podemos guardar la reserva en la bd:
-		//this.DAO.realizarReserva(vuelo);
-
-		return dev;
+		return DAOImplement.getInstance().realizarReserva(vuelo);
 	}
 
 	public synchronized boolean realizarPagoPaypal(Paypal paypalOrigen, Paypal paypalDestino, double importe,
-			String concepto) throws RemoteException {
+			String concepto) {
 		boolean dev = false;
 		// Conectamos con el gateway de paypal para pagar:
 		if (this.paypalGateway.realizarPago(paypalOrigen.getNombreUsuario(), paypalDestino.getNombreUsuario(), importe,
@@ -168,7 +159,7 @@ public class Server {
 	}
 
 	public synchronized boolean realizarPagoCreditCard(Creditcard creditcardOrigen, Creditcard creditcardDestino,
-			double importe, String concepto) throws RemoteException {
+			double importe, String concepto) {
 		boolean dev = false;
 		// Conectamos con el gateway de visa para pagar:
 		if (this.visaGateway.realizarPago(creditcardOrigen.getNumeroTarjeta(), creditcardDestino.getNumeroTarjeta(),

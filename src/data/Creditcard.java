@@ -9,7 +9,6 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Creditcard {
 
-	@PrimaryKey
 	private String numeroTarjeta;
 	private int cvv2;
 	private Date fechaCaducidad;

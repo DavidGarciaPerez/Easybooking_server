@@ -11,7 +11,6 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Usuario {
 	
-	@PrimaryKey
 	private String nombre;
 	private String email;
 	private String sistemaAutentificacion;
