@@ -6,7 +6,9 @@ import java.util.List;
 
 import dao.DAOImplement;
 import data.Creditcard;
+import data.Pago;
 import data.Paypal;
+import data.Reserva;
 import data.Vuelo;
 import gateways.FacebookGateway;
 import gateways.GatewayFactory;
@@ -126,19 +128,19 @@ public class Server {
 		return listaADevolver;
 	}
 
-	public synchronized boolean realizarReserva(Vuelo vuelo, int nPlazas, String[] pasajeros) {
+	public synchronized boolean realizarReserva(Reserva reservaARealizar, int nPlazas, String[] pasajeros) {
 		// Conectamos con el gateway de la aerolínea: para eso hay que buscarlo en
 		// "Vuelo":
-		if (vuelo.getAerolinea().getNombreAerolinea().equalsIgnoreCase("VUELING")) {
+		if (reservaARealizar.getVuelo().getAerolinea().getNombreAerolinea().equalsIgnoreCase("VUELING")) {
 			// Conectamos con VUELING:
-			this.vuelingGateway.decrementarPlazasLibres(vuelo);
+			this.vuelingGateway.decrementarPlazasLibres(reservaARealizar.getVuelo());
 		} else {
 			// Conectamos con RYANAIR:
-			this.ryanairGateway.decrementarPlazasLibres(vuelo);
+			this.ryanairGateway.decrementarPlazasLibres(reservaARealizar.getVuelo());
 		}
 
 		// Una vez decrementadas las plazas podemos guardar la reserva en la bd:
-		return DAOImplement.getInstance().realizarReserva(vuelo);
+		return DAOImplement.getInstance().realizarReserva(reservaARealizar);
 	}
 
 	public synchronized boolean realizarPagoPaypal(Paypal paypalOrigen, Paypal paypalDestino, double importe,
@@ -148,13 +150,7 @@ public class Server {
 		if (this.paypalGateway.realizarPago(paypalOrigen.getNombreUsuario(), paypalDestino.getNombreUsuario(), importe,
 				concepto)) {
 			dev = true;
-			// Si el pago ha ido correctamente entonces guardamos la transacción en nuestra
-			// base de datos:
-			if (dev) {
-
-			}
 		}
-
 		return dev;
 	}
 
@@ -165,11 +161,6 @@ public class Server {
 		if (this.visaGateway.realizarPago(creditcardOrigen.getNumeroTarjeta(), creditcardDestino.getNumeroTarjeta(),
 				importe, concepto)) {
 			dev = true;
-			// Si el pago ha ido correctamente entonces guardamos la transacción en nuestra
-			// base de datos:
-			if (dev) {
-
-			}
 		}
 		return dev;
 	}

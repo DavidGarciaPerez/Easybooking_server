@@ -8,6 +8,7 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import data.Pago;
 import data.Reserva;
 import data.Usuario;
 import data.Vuelo;
@@ -115,7 +116,7 @@ public class DAOImplement implements IDAO {
 	}
 
 	@Override
-	public boolean realizarReserva(Vuelo vuelo) {
+	public boolean realizarReserva(Reserva reserva) {
 		// TODO Auto-generated method stub
 		boolean consultaCorrecta = false;
 		try {
@@ -126,7 +127,7 @@ public class DAOImplement implements IDAO {
 			// Start the transaction
 			this.tx.begin();
 			// Realizamos consulta a la BD:
-			this.pm.makePersistent(vuelo);
+			this.pm.makePersistent(reserva);
 			// End the transaction
 			this.tx.commit();
 			// Confirmamos que la consulta se ha hecho correctamente.

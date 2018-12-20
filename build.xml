@@ -12,7 +12,7 @@
 	<property name="server.Login" value="login" />
 	<property name="server.Vuelo" value="vuelo" />
 	<property name="server.Pago" value="pago" />
-	<property name="export.file" value="EasybookingServerClient.jar" />
+	<property name="export.file" value="EB_C_CONECT.jar" />
 	<property name="policy.file" location="security/java.policy" />
 
 	<path id="classpath">

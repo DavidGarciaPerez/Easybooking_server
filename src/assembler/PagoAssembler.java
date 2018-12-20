@@ -16,7 +16,7 @@ public class PagoAssembler {
 
 		for (Pago p : pagos) {
 			pagosDTO.add(new PagoDTO(paypalAssemblerOne.assembleOne(p.getPaypal()),
-					creditcardAssemblerOne.assembleOne(p.getCreditcard())));
+					creditcardAssemblerOne.assembleOne(p.getCreditcard()), p.getImporte(), p.getConcepto()));
 		}
 
 		return pagosDTO;
@@ -24,6 +24,6 @@ public class PagoAssembler {
 
 	public PagoDTO assembleOne(Pago p) {
 		return new PagoDTO(paypalAssemblerOne.assembleOne(p.getPaypal()),
-				creditcardAssemblerOne.assembleOne(p.getCreditcard()));
+				creditcardAssemblerOne.assembleOne(p.getCreditcard()), p.getImporte(), p.getConcepto());
 	}
 }

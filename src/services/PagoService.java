@@ -25,8 +25,7 @@ public class PagoService extends UnicastRemoteObject implements IPagoService {
 		// TODO Auto-generated method stub
 		Paypal paypalOrigenDATA = new Paypal(paypalOrigen.getNombreUsuario());
 		Paypal paypalDestinoDATA = new Paypal(paypalDestino.getNombreUsuario());
-		this.server.realizarPagoPaypal(paypalOrigenDATA, paypalDestinoDATA, importe, concepto);
-		return false;
+		return this.server.realizarPagoPaypal(paypalOrigenDATA, paypalDestinoDATA, importe, concepto);
 	}
 
 	@Override
@@ -37,8 +36,7 @@ public class PagoService extends UnicastRemoteObject implements IPagoService {
 				creditcardOrigen.getCvv2(), creditcardOrigen.getFechaCaducidad());
 		Creditcard creditcardDestinoDATA = new Creditcard(creditcardDestino.getNumeroTarjeta(),
 				creditcardDestino.getCvv2(), creditcardDestino.getFechaCaducidad());
-		this.server.realizarPagoCreditCard(creditcardOrigenDATA, creditcardDestinoDATA, importe, concepto);
-		return false;
+		return this.server.realizarPagoCreditCard(creditcardOrigenDATA, creditcardDestinoDATA, importe, concepto);
 	}
 
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import data.Reserva;
 import data.Usuario;
-import data.Vuelo;
 
 public interface IDAO {
 	boolean registerUser(Usuario usuario);
@@ -12,5 +11,5 @@ public interface IDAO {
 	List<Reserva> getReservas(List<Reserva> arrayReservas, Usuario usario);
 	boolean deleteUsuario(Usuario usuario);
 	boolean changeUserName(Usuario usuario);
-	boolean realizarReserva(Vuelo vuelo);
+	boolean realizarReserva(Reserva reserva);
 }

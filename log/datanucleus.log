@@ -1299,3 +1299,90 @@ org.datanucleus.exceptions.ClassNotResolvedException: ¡La clase Creditcard.java 
 21:28:19,316 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
 21:28:19,316 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases.
 21:28:21,076 (main) WARN  [DataNucleus.Datastore] - Default type for java type of java.math.BigInteger was previously jdbc-type=NUMERIC but this is not provided by the JDBC driver! Please report this to the DataNucleus developers
+13:29:42,397 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.0.m1) para el API "JDO" utilisando el JRE "{2}"
+13:29:42,600 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aerolinea.class" con definicion enhanced
+13:29:42,600 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aeropuerto.class" con definicion enhanced
+13:29:42,600 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Creditcard.class" con definicion enhanced
+13:29:42,616 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Pago.class" con definicion enhanced
+13:29:42,616 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Paypal.class" con definicion enhanced
+13:29:42,616 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Reserva.class" con definicion enhanced
+13:29:42,616 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Usuario.class" con definicion enhanced
+13:29:42,631 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
+13:29:42,631 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases.
+13:30:01,265 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.0.m1) para el API "JDO" utilisando el JRE "{2}"
+13:30:01,491 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aerolinea.class" con definicion enhanced
+13:30:01,495 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aeropuerto.class" con definicion enhanced
+13:30:01,499 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Creditcard.class" con definicion enhanced
+13:30:01,504 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Pago.class" con definicion enhanced
+13:30:01,507 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Paypal.class" con definicion enhanced
+13:30:01,512 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Reserva.class" con definicion enhanced
+13:30:01,518 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Usuario.class" con definicion enhanced
+13:30:01,522 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
+13:30:01,522 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases.
+13:30:03,769 (main) WARN  [DataNucleus.Datastore] - Default type for java type of java.math.BigInteger was previously jdbc-type=NUMERIC but this is not provided by the JDBC driver! Please report this to the DataNucleus developers
+13:33:52,738 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.0.m1) para el API "JDO" utilisando el JRE "{2}"
+13:33:52,946 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aerolinea.class" con definicion enhanced
+13:33:52,950 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aeropuerto.class" con definicion enhanced
+13:33:52,955 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Creditcard.class" con definicion enhanced
+13:33:52,960 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Pago.class" con definicion enhanced
+13:33:52,964 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Paypal.class" con definicion enhanced
+13:33:52,968 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Reserva.class" con definicion enhanced
+13:33:52,972 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Usuario.class" con definicion enhanced
+13:33:52,976 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
+13:33:52,977 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases.
+13:33:54,634 (main) WARN  [DataNucleus.Datastore] - Default type for java type of java.math.BigInteger was previously jdbc-type=NUMERIC but this is not provided by the JDBC driver! Please report this to the DataNucleus developers
+13:36:14,483 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.0.m1) para el API "JDO" utilisando el JRE "{2}"
+13:36:14,689 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aerolinea.class" con definicion enhanced
+13:36:14,694 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aeropuerto.class" con definicion enhanced
+13:36:14,699 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Creditcard.class" con definicion enhanced
+13:36:14,705 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Pago.class" con definicion enhanced
+13:36:14,709 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Paypal.class" con definicion enhanced
+13:36:14,716 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Reserva.class" con definicion enhanced
+13:36:14,720 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Usuario.class" con definicion enhanced
+13:36:14,725 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
+13:36:14,725 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases.
+13:36:16,505 (main) WARN  [DataNucleus.Datastore] - Default type for java type of java.math.BigInteger was previously jdbc-type=NUMERIC but this is not provided by the JDBC driver! Please report this to the DataNucleus developers
+13:36:23,024 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.0.m1) para el API "JDO" utilisando el JRE "{2}"
+13:36:23,223 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aerolinea.class" con definicion enhanced
+13:36:23,227 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aeropuerto.class" con definicion enhanced
+13:36:23,232 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Creditcard.class" con definicion enhanced
+13:36:23,237 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Pago.class" con definicion enhanced
+13:36:23,240 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Paypal.class" con definicion enhanced
+13:36:23,244 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Reserva.class" con definicion enhanced
+13:36:23,248 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Usuario.class" con definicion enhanced
+13:36:23,252 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
+13:36:23,252 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases.
+13:36:24,906 (main) WARN  [DataNucleus.Datastore] - Default type for java type of java.math.BigInteger was previously jdbc-type=NUMERIC but this is not provided by the JDBC driver! Please report this to the DataNucleus developers
+13:36:47,530 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.0.m1) para el API "JDO" utilisando el JRE "{2}"
+13:36:47,730 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aerolinea.class" con definicion enhanced
+13:36:47,734 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aeropuerto.class" con definicion enhanced
+13:36:47,739 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Creditcard.class" con definicion enhanced
+13:36:47,744 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Pago.class" con definicion enhanced
+13:36:47,747 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Paypal.class" con definicion enhanced
+13:36:47,751 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Reserva.class" con definicion enhanced
+13:36:47,756 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Usuario.class" con definicion enhanced
+13:36:47,760 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
+13:36:47,760 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases.
+13:36:49,407 (main) WARN  [DataNucleus.Datastore] - Default type for java type of java.math.BigInteger was previously jdbc-type=NUMERIC but this is not provided by the JDBC driver! Please report this to the DataNucleus developers
+13:37:05,835 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.0.m1) para el API "JDO" utilisando el JRE "{2}"
+13:37:06,036 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aerolinea.class" con definicion enhanced
+13:37:06,040 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aeropuerto.class" con definicion enhanced
+13:37:06,044 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Creditcard.class" con definicion enhanced
+13:37:06,049 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Pago.class" con definicion enhanced
+13:37:06,052 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Paypal.class" con definicion enhanced
+13:37:06,056 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Reserva.class" con definicion enhanced
+13:37:06,061 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Usuario.class" con definicion enhanced
+13:37:06,064 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
+13:37:06,065 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases.
+13:37:07,712 (main) WARN  [DataNucleus.Datastore] - Default type for java type of java.math.BigInteger was previously jdbc-type=NUMERIC but this is not provided by the JDBC driver! Please report this to the DataNucleus developers
+13:42:48,995 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.0.m1) para el API "JDO" utilisando el JRE "{2}"
+13:42:49,196 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aerolinea.class" con definicion enhanced
+13:42:49,200 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Aeropuerto.class" con definicion enhanced
+13:42:49,204 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Creditcard.class" con definicion enhanced
+13:42:49,209 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Pago.class" con definicion enhanced
+13:42:49,213 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Paypal.class" con definicion enhanced
+13:42:49,217 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Reserva.class" con definicion enhanced
+13:42:49,221 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Usuario.class" con definicion enhanced
+13:42:49,225 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\SoftLabs\DS_GitHub\Easybooking_proyecto\Easybooking_server\bin\data\Vuelo.class" con definicion enhanced
+13:42:49,225 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 8 clases.
+13:42:50,852 (main) WARN  [DataNucleus.Datastore] - Default type for java type of java.math.BigInteger was previously jdbc-type=NUMERIC but this is not provided by the JDBC driver! Please report this to the DataNucleus developers
