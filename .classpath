@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="lib/javax.jdo-3.2.0-m9.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-1.2.14.jar"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-8.0.12.jar"/>
+	<classpathentry kind="lib" path="lib/substance-6.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

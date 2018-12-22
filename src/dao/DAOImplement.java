@@ -12,6 +12,7 @@ import data.Pago;
 import data.Reserva;
 import data.Usuario;
 import data.Vuelo;
+import gateways.FacebookGateway;
 
 public class DAOImplement implements IDAO {
 
@@ -110,9 +111,42 @@ public class DAOImplement implements IDAO {
 	}
 
 	@Override
-	public List<Reserva> getReservas(List<Reserva> arrayReservas, Usuario usario) {
+	public List<Reserva> getReservas(List<Reserva> arrayReservas, Usuario usuario) {
 		// TODO Auto-generated method stub
-		return null;
+		try {
+			// Get the Persistence Manager
+			this.pm = this.pmf.getPersistenceManager();
+			// Obtain the current transaction
+			this.tx = this.pm.currentTransaction();
+			// Start the transaction
+			this.tx.begin();
+			Query<Reserva> query = this.pm.newQuery(Reserva.class);
+			@SuppressWarnings("unchecked")
+			List<Reserva> reservas = (List<Reserva>) query.execute();
+			// End the transaction
+			this.tx.commit();
+			// Comprobamos datos de los usuarios para ver si se han obtenido correctamente:
+			for (Reserva reserva : reservas) {
+				if (usuario.getEmail().equals(reserva.getUsuario().getEmail())) {
+					// Añadimos los usuarios sacados de la bd a nuestra lista pasada como parámetro:
+					arrayReservas.add(reserva);
+					// Mostramos detalles de cada usuarios:
+					System.out.println("NOMBRE DEL VUELO LA RESERVA: " + reserva.getVuelo().getNumVuelo()
+							+ "  USUARIO: " + reserva.getUsuario().getNombre());
+				}
+			}
+		} catch (Exception ex) {
+			System.err.println(ex.getMessage());
+		} finally {
+			if (tx != null && tx.isActive()) {
+				tx.rollback();
+			}
+
+			if (pm != null && !pm.isClosed()) {
+				pm.close();
+			}
+		}
+		return arrayReservas;
 	}
 
 	@Override
@@ -232,6 +266,10 @@ public class DAOImplement implements IDAO {
 			}
 		}
 		return consultaCorrecta;
+	}
+
+	public static void main(String[] args) {
+
 	}
 
 }

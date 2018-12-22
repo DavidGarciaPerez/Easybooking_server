@@ -81,7 +81,7 @@
 		</schematool>
 	</target>
 
-	<target name="4.main" description="Runs a local test of the Server">
+	<target name="4.main"  depends="2.enhance-classes" description="Runs a local test of the Server">
 		<java classname="dao.gestion_bd_main" classpathref="classpath" fork="true">
 			<jvmarg value="-Dlog4j.configuration=log4j.properties" />
 		</java>

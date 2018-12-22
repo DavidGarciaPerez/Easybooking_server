@@ -1,7 +1,6 @@
 package data;
 
 import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Reserva {
