@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -8,11 +9,8 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-import data.Pago;
 import data.Reserva;
 import data.Usuario;
-import data.Vuelo;
-import gateways.FacebookGateway;
 
 public class DAOImplement implements IDAO {
 
@@ -111,8 +109,9 @@ public class DAOImplement implements IDAO {
 	}
 
 	@Override
-	public List<Reserva> getReservas(List<Reserva> arrayReservas, Usuario usuario) {
+	public List<Reserva> getReservas(Usuario usuario) {
 		// TODO Auto-generated method stub
+		List<Reserva> arrayReservas = new ArrayList<Reserva>();
 		try {
 			// Get the Persistence Manager
 			this.pm = this.pmf.getPersistenceManager();
@@ -131,8 +130,11 @@ public class DAOImplement implements IDAO {
 					// Añadimos los usuarios sacados de la bd a nuestra lista pasada como parámetro:
 					arrayReservas.add(reserva);
 					// Mostramos detalles de cada usuarios:
-					System.out.println("NOMBRE DEL VUELO LA RESERVA: " + reserva.getVuelo().getNumVuelo()
-							+ "  USUARIO: " + reserva.getUsuario().getNombre());
+					System.out.println(reserva.getPago().getImporte() + " " + reserva.getUsuario().getEmail() + " "
+							+ reserva.getVuelo().getAerolinea().getNombreAerolinea() + " "
+							+ reserva.getVuelo().getAeropuertoOrigen().getNombre() + " "
+							+ reserva.getVuelo().getAeropuertoDestino().getNombre() + " "
+							+ reserva.getVuelo().getHoraSalida());
 				}
 			}
 		} catch (Exception ex) {

@@ -50,5 +50,4 @@ public class Pago {
 	public void setCreditcard(Creditcard creditcard) {
 		this.creditcard = creditcard;
 	}
-
 }

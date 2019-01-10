@@ -5,6 +5,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import assembler.ReservaAssembler;
 import assembler.VueloAssembler;
 import data.Aerolinea;
 import data.Aeropuerto;
@@ -15,10 +16,8 @@ import data.Reserva;
 import data.Usuario;
 import data.Vuelo;
 import data.dto.ReservaDTO;
+import data.dto.UsuarioDTO;
 import data.dto.VueloDTO;
-import gateways.GatewayFactory;
-import gateways.RyanairGateway;
-import gateways.VuelingGateway;
 import server.Server;
 
 //Esta clase implementa la Fachada y AppService Patterns:
@@ -36,10 +35,8 @@ public class VueloService extends UnicastRemoteObject implements IVueloService {
 	public List<VueloDTO> buscarVuelos(String origen, String destino, int nPlazas) throws RemoteException {
 		// TODO Auto-generated method stub
 		// Transformación de DATA a DTO:
-		List<VueloDTO> vuelos = new ArrayList<VueloDTO>();
 		VueloAssembler assembler = new VueloAssembler();
-		vuelos = assembler.assemble(server.buscarVuelos(origen, destino, nPlazas));
-		return vuelos;
+		return assembler.assemble(server.buscarVuelos(origen, destino, nPlazas));
 	}
 
 	@Override
@@ -67,8 +64,15 @@ public class VueloService extends UnicastRemoteObject implements IVueloService {
 				pago);
 
 		// Una vez transformado podemos pasar ya los datos:
-		this.server.realizarReserva(reserva, nPlazas, pasajeros);
+		return this.server.realizarReserva(reserva, nPlazas, pasajeros);
+	}
 
-		return false;
+	@Override
+	public List<ReservaDTO> getReservas(UsuarioDTO usuario) throws RemoteException {
+		// TODO Auto-generated method stub
+		// Transformación de DATA a DTO:
+		ReservaAssembler assembler = new ReservaAssembler();
+		return assembler.assemble(server.getReservas(
+				new Usuario(usuario.getNombre(), usuario.getEmail(), usuario.getSistemaAutentificacion())));
 	}
 }

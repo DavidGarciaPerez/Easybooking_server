@@ -6,7 +6,7 @@ import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable
 public class Vuelo {
-	
+
 	private int numVuelo;
 	private Date horaSalida;
 	private Date horaLlegada;

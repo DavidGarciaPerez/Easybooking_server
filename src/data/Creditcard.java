@@ -5,7 +5,6 @@ import java.util.Date;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
-
 @PersistenceCapable
 public class Creditcard {
 
@@ -43,5 +42,4 @@ public class Creditcard {
 	public void setFechaCaducidad(Date fechaCaducidad) {
 		this.fechaCaducidad = fechaCaducidad;
 	}
-	
 }

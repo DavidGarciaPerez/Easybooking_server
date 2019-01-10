@@ -58,5 +58,4 @@ public class Reserva {
 	public void setPago(Pago pago) {
 		this.pago = pago;
 	}
-
 }

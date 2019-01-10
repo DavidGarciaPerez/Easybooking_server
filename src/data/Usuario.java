@@ -10,15 +10,15 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Usuario {
-	
+
 	private String nombre;
 	private String email;
 	private String sistemaAutentificacion;
-	
+
 	@Join
-	@Persistent(mappedBy="usuario", dependentElement="true")
+	@Persistent(mappedBy = "usuario", dependentElement = "true")
 	private List<Reserva> reservas = new ArrayList<>();
-	
+
 	public Usuario(String nombre, String email, String sistemaAutentificacion) {
 		super();
 		this.nombre = nombre;
@@ -57,7 +57,7 @@ public class Usuario {
 	public void setReservas(List<Reserva> reservas) {
 		this.reservas = reservas;
 	}
-	
+
 	public boolean isEmpty() {
 		return reservas.isEmpty();
 	}

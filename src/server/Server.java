@@ -1,14 +1,13 @@
 package server;
 
-import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
 import dao.DAOImplement;
 import data.Creditcard;
-import data.Pago;
 import data.Paypal;
 import data.Reserva;
+import data.Usuario;
 import data.Vuelo;
 import gateways.FacebookGateway;
 import gateways.GatewayFactory;
@@ -19,39 +18,6 @@ import gateways.VisaGateway;
 import gateways.VuelingGateway;
 
 public class Server {
-
-	// private static final long serialVersionUID = 1L;// Serializable
-	//
-	//
-	// // Constructor por defecto:
-	// protected Server() throws RemoteException {
-	// super();
-	// }
-	//
-	// // Método main para invocar servidor:
-	// public static void main(String[] args) throws RemoteException,
-	// MalformedURLException{
-	// if (args.length != 3) {
-	// System.out.println("usage: java [policy] [codebase] server.Server [host]
-	// [port] [server]");
-	// System.exit(0);
-	// }
-	//
-	// if (System.getSecurityManager() == null) {
-	// System.setSecurityManager(new SecurityManager());
-	// }
-	//
-	// String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
-	//
-	// try {
-	// IServer objServer = new Server();
-	// Naming.rebind(name, objServer);
-	// System.out.println("* Server '" + name + "' active and waiting...");
-	// } catch (Exception e) {
-	// System.err.println("- Exception running the server: " + e.getMessage());
-	// e.printStackTrace();
-	// }
-	// }
 
 	private PaypalGateway paypalGateway;
 	private VisaGateway visaGateway;
@@ -163,6 +129,10 @@ public class Server {
 			dev = true;
 		}
 		return dev;
+	}
+
+	public synchronized List<Reserva> getReservas(Usuario usuario) {
+		return DAOImplement.getInstance().getReservas(usuario);
 	}
 
 	// public synchronized boolean realizarReserva(Reserva reservaARealizar, int

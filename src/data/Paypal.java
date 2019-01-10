@@ -3,7 +3,6 @@ package data;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
-
 @PersistenceCapable
 public class Paypal {
 
@@ -21,5 +20,4 @@ public class Paypal {
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
 	}
-
 }

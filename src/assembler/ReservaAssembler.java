@@ -13,7 +13,7 @@ public class ReservaAssembler {
 	private PagoAssembler pagoAssembler = new PagoAssembler();
 
 	public List<ReservaDTO> assemble(List<Reserva> reservas) {
-		List<ReservaDTO> reservasDTO = new ArrayList<>();
+		List<ReservaDTO> reservasDTO = new ArrayList<ReservaDTO>();
 
 		for (Reserva r : reservas) {
 			reservasDTO.add(new ReservaDTO(r.getPrecio(),
@@ -22,7 +22,6 @@ public class ReservaAssembler {
 										   vueloAssembler.assembleOne(r.getVuelo()),
 										   pagoAssembler.assembleOne(r.getPago())));
 		}
-
 		return reservasDTO;
 	}
 }
